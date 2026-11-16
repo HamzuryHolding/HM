@@ -1,0 +1,23 @@
+{
+  "name": "hm-hamzury-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "hm hamzury website and browser-local personal OS",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "build:readable": "node scripts/build.mjs --no-minify",
+    "preview": "node scripts/dev.mjs --dir dist --port 4173 --no-reload",
+    "format": "prettier --write \"src/**/*.{html,css,js}\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "prettier": "^3.10.1",
+    "terser": "^5.51.2"
+  }
+}

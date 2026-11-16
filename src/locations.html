@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Find Hamzury in Abuja and Jos. Office address, map directions and a shareable locations page."
+    />
+    <meta property="og:title" content="Our locations | hm hamzury" />
+    <meta
+      property="og:description"
+      content="Abuja: Suite 4, Ajami Plaza, Plot 500B, Tafawa Balewa Way, Area 3, Garki. Jos: Hamzury Innovation Hub. Open maps and directions."
+    />
+    <title>Locations & directions | hm hamzury</title>
+    <link rel="stylesheet" href="assets/pages.css" />
+    <link rel="stylesheet" href="inline/locations.css" data-inline />
+  </head>
+  <body>
+    <header>
+      <strong>hm hamzury</strong><a href="index.html">← Back to website</a>
+    </header>
+    <main>
+      <div class="eyebrow">Visit · connect · build</div>
+      <h1>Find us in<br />Abuja and Jos.</h1>
+      <p class="lead">
+        Our locations, together in one place. Choose your destination for the
+        address and map directions.
+      </p>
+      <div class="locations">
+        <section class="location" id="abuja">
+          <div class="eyebrow">01 / Abuja</div>
+          <h2>Abuja office.</h2>
+          <address>
+            Suite 4, Ajami Plaza<br />Plot 500B, Tafawa Balewa Way<br />Area 3,
+            Garki<br />Abuja, Nigeria
+          </address>
+          <div class="tools">
+            <a
+              class="btn primary"
+              id="abujaMap"
+              href="https://yandex.com/maps/20742/abuja/?ll=7.494017%2C9.040447&amp;mode=routes&amp;rtext=~9.028329%2C7.478382&amp;rtt=auto&amp;ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D215290030981&amp;z=14.5"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open Abuja directions ↗</a
+            ><button data-copy="abuja">Copy address</button
+            ><button data-share="abuja">Share Abuja</button>
+          </div>
+        </section>
+        <section class="location" id="jos">
+          <div class="eyebrow">02 / Jos</div>
+          <h2>Hamzury Innovation Hub.</h2>
+          <address>Jos, Plateau State<br />Nigeria</address>
+          <p class="note">
+            Use the map pin below for the Hub’s exact location.
+          </p>
+          <div class="tools">
+            <a
+              class="btn primary"
+              id="josMap"
+              href="https://www.google.com/maps/place/hamzury+innovation+hub/@9.9303296,8.8896841,17z/data=!3m1!4b1!4m6!3m5!1s0x1053738fbdc0e88f:0x1d70274660173290!8m2!3d9.9303296!4d8.892259!16s%2Fg%2F11zyxj8klg?entry=ttu&amp;g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open Jos map ↗</a
+            ><button data-copy="jos">Copy location</button
+            ><button data-share="jos">Share Jos</button>
+          </div>
+        </section>
+      </div>
+      <section class="sharebox">
+        <div class="eyebrow">One link. Both locations.</div>
+        <h2>Someone asked for our address?</h2>
+        <p>Share this page, or choose a specific location above.</p>
+        <div class="tools">
+          <button id="shareBoth">Share both locations</button
+          ><button id="copyLink">Copy page link</button
+          ><a class="btn" href="mailto:hm@hamzury.com?subject=Visit%20enquiry"
+            >Contact before your visit ↗</a
+          >
+        </div>
+        <p id="status" role="status" aria-live="polite"></p>
+        <textarea
+          id="shareLink"
+          aria-label="Link or address to copy"
+          rows="4"
+          readonly
+          hidden
+        ></textarea>
+      </section>
+      <img
+        class="motif"
+        src="assets/brand/signage.webp"
+        alt=""
+        aria-hidden="true"
+      />
+    </main>
+    <footer>
+      hm hamzury · <a href="mailto:hm@hamzury.com">hm@hamzury.com</a>
+    </footer>
+    <script src="inline/locations.js" data-inline></script>
+  </body>
+</html>

@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>hm hamzury | Understand deeply. Build meaningfully.</title>
+    <meta
+      name="description"
+      content="hm hamzury: ideas, research, ASSSS philosophy, public service and institution building."
+    />
+    <link rel="stylesheet" href="inline/index.css" data-inline />
+  </head>
+  <body>
+    <header id="publicHeader" class="top">
+      <div class="shell">
+        <a href="#home" class="brand"
+          >hm hamzury<small>THINK • BUILD • IMPROVE</small></a
+        >
+        <nav id="nav" class="nav">
+          <a href="#philosophy">ASSSS</a><a href="#work">Work & impact</a
+          ><a href="#research">Research</a><a href="#library">Library</a
+          ><a href="#experiences">Experiences</a><a href="#speaking">Speaking</a
+          ><a href="#connect">Connect</a>
+        </nav>
+        <div style="display: flex; gap: 10px">
+          <button class="pill" onclick="openLogin()">Private hm OS</button
+          ><button
+            class="menu"
+            onclick="document.getElementById('nav').classList.toggle('mobile')"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="workspace-preview" class="section light" hidden>
+        <div class="shell">
+          <span class="eyebrow">LOCAL PREVIEW · NOT PUBLISHED</span>
+          <h2 id="preview-title"></h2>
+          <p
+            id="preview-copy"
+            style="white-space: pre-wrap; line-height: 1.9"
+          ></p>
+          <a class="btn" href="os/#publications">← Return to publication</a>
+        </div>
+      </section>
+      <section class="hero" id="home">
+        <div class="shell hero-grid">
+          <div>
+            <span class="eyebrow"
+              >A life of questions, research & useful work</span
+            >
+            <h1>Understand deeply.<br /><em>Build meaningfully.</em></h1>
+            <p>
+              I’m hm hamzury. I study why problems persist and how people and
+              institutions can respond with clearer thinking, practical
+              structure and systems that last. My work spans entrepreneurship,
+              education, technology and public life.
+            </p>
+            <div class="hero-actions">
+              <a href="#philosophy" class="btn">Explore the philosophy ↗</a
+              ><button class="btn alt" onclick="openDiscovery()">
+                Find my next step ↗
+              </button>
+            </div>
+            <p
+              style="
+                font-size: 11px;
+                letter-spacing: 1px;
+                margin-top: 45px;
+                color: #ae967f;
+              "
+            >
+              HARUNA MUHAMMAD · FOUNDER & INSTITUTION BUILDER · @HMHAMZURY
+            </p>
+          </div>
+          <figure class="hero-portrait">
+            <img
+              src="assets/official-portrait.jpeg"
+              alt="Official portrait of hm hamzury"
+              width="800"
+              height="800"
+              fetchpriority="high"
+            />
+            <figcaption class="portrait-roles">
+              <strong>Haruna Muhammad</strong>
+              <p>
+                Founder, Hamzury Holding · Chairman, RIDLI<br />Philosopher &
+                developer of ASSSS<br />Director of Research and Policy, Nigeria
+                Youths in Politics<br />Business architecture & systems
+                consultant
+              </p>
+              <a href="about.html" style="font-size: 12px; color: var(--gold)"
+                >More about me & my roles ↗</a
+              >
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="section light" id="philosophy">
+        <div class="shell">
+          <div class="eyebrow" style="color: #89653f">01 / My thinking</div>
+          <h2>Five stages. One developing framework.</h2>
+          <p class="intro">
+            ASSSS is my approach to investigating challenges, choosing
+            deliberate action, and measuring results. It is a developing body of
+            work: open to evaluation, improvement and application across
+            different fields.
+          </p>
+          <div class="steps">
+            <div class="step">
+              <small>01 / A</small><b>Awareness</b>
+              <p>Observe, question and define the real problem.</p>
+            </div>
+            <div class="step">
+              <small>02 / S</small><b>Strategy</b>
+              <p>Compare options and choose a direction.</p>
+            </div>
+            <div class="step">
+              <small>03 / S</small><b>Structure</b>
+              <p>Organise roles, responsibilities and resources.</p>
+            </div>
+            <div class="step">
+              <small>04 / S</small><b>Systems</b>
+              <p>Build processes that support repeatable work.</p>
+            </div>
+            <div class="step">
+              <small>05 / S</small><b>Success</b>
+              <p>Evaluate outcomes, learn and improve.</p>
+            </div>
+          </div>
+          <div style="margin-top: 30px">
+            <button onclick="openDiscovery()" class="btn">
+              Apply ASSSS to a challenge ↗
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="work">
+        <div class="shell">
+          <span class="eyebrow">02 / Real-world applications</span>
+          <h2>Different problems. The same curiosity.</h2>
+          <p class="intro">
+            Four starting points in a growing body of work. Explore the
+            institutions, technology and community initiatives behind the ideas.
+          </p>
+          <div class="grid2">
+            <article class="tile">
+              <small>ENTREPRENEURSHIP</small>
+              <h3>Hamzury Holding</h3>
+              <p>
+                Businesses need connected support to move from an idea to
+                dependable operation. Hamzury Holding brings together specialist
+                ventures across compliance, branding, software, automation,
+                skills and partnerships.
+              </p>
+              <a href="work.html#holding">Explore this work ↗</a>
+            </article>
+            <article class="tile">
+              <small>EDUCATION & OPPORTUNITY</small>
+              <h3>RIDLI</h3>
+              <p>
+                Access to learning should not depend only on what a young person
+                can afford. RIDLI connects sponsorship, digital literacy and
+                practical training with opportunities to build.
+              </p>
+              <a href="work.html#ridli">Explore this work ↗</a>
+            </article>
+            <article class="tile">
+              <small>CIVIC TECHNOLOGY</small>
+              <h3>YEGO</h3>
+              <p>
+                Civic participation needs accessible ways to organise
+                information and report what people observe. YEGO is
+                election-focused platform work around participation and
+                reporting.
+              </p>
+              <a href="work.html#yego">Explore this work ↗</a>
+            </article>
+            <article class="tile">
+              <small>FAMILY HISTORY</small>
+              <h3>Family Tree</h3>
+              <p>
+                Family knowledge can become fragmented across generations. This
+                project explores organising relationships and preserving lineage
+                in a more accessible form.
+              </p>
+              <a href="work.html#family-tree">Explore this work ↗</a>
+            </article>
+          </div>
+          <div class="hero-actions">
+            <a class="btn" href="work.html">Learn more: all work & impact ↗</a
+            ><a class="btn alt" href="work.html#impact"
+              >RIDLI: 1,808+ youth reached ↗</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section light" id="research">
+        <div class="shell feature">
+          <div>
+            <span class="eyebrow" style="color: #89653f"
+              >03 / Research, writing and knowledge</span
+            >
+            <h2>Ideas should be understandable, testable and useful.</h2>
+            <p class="intro">
+              The research library will contain essays, working papers, books,
+              methods, case studies and free teaching resources. Each item will
+              show its publication status, date, authorship and references.
+            </p>
+            <p class="intro">
+              A foundational ASSSS paper, educator’s toolkit and book series are
+              planned. These are not represented as already published.
+            </p>
+            <a
+              href="mailto:hm@hamzury.com?subject=Research%20collaboration"
+              class="btn"
+              >Discuss research collaboration ↗</a
+            >
+          </div>
+          <div style="background: #e8dac6; padding: 42px">
+            <span class="eyebrow" style="color: #89653f"
+              >The future knowledge library</span
+            >
+            <div style="padding: 25px 0; border-bottom: 1px solid #bea991">
+              <b>ASSSS — foundational paper</b>
+              <p class="muted">In development · forthcoming</p>
+            </div>
+            <div style="padding: 25px 0; border-bottom: 1px solid #bea991">
+              <b>ASSSS field guide and worksheet</b>
+              <p class="muted">Planned teaching resources</p>
+            </div>
+            <div style="padding: 25px 0">
+              <b>Case studies and published essays</b>
+              <p class="muted">Evidence and editorial review required</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section light" id="library">
+        <div class="shell">
+          <span class="eyebrow" style="color: #89653f"
+            >FREE DOWNLOADS / WORKING EDITIONS</span
+          >
+          <h2>Ideas you can take away and use.</h2>
+          <div class="grid3">
+            <article class="tile resource-card">
+              <small>Personal essay / Draft 1</small>
+              <h3>Before We Solve It, We Must Understand It</h3>
+              <p>Branded PDF · Working edition, November 2026</p>
+              <div class="resource-actions">
+                <a class="primary" href="downloads/assss-essay.pdf" download
+                  >Download PDF ↓</a
+                ><a
+                  href="downloads/assss-essay.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Read PDF ↗</a
+                >
+              </div>
+            </article>
+            <article class="tile resource-card">
+              <small>Teaching guide / 90-minute session</small>
+              <h3>ASSSS Applied: Entrepreneurship and Technology</h3>
+              <p>Branded PDF · Working edition, November 2026</p>
+              <div class="resource-actions">
+                <a
+                  class="primary"
+                  href="downloads/assss-teaching-guide.pdf"
+                  download
+                  >Download PDF ↓</a
+                ><a
+                  href="downloads/assss-teaching-guide.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Read PDF ↗</a
+                >
+              </div>
+            </article>
+            <article class="tile resource-card">
+              <small>Research concept / No findings claimed</small>
+              <h3>Studying the Usefulness of ASSSS</h3>
+              <p>Branded PDF · Working edition, November 2026</p>
+              <div class="resource-actions">
+                <a
+                  class="primary"
+                  href="downloads/assss-research-concept.pdf"
+                  download
+                  >Download PDF ↓</a
+                ><a
+                  href="downloads/assss-research-concept.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Read PDF ↗</a
+                >
+              </div>
+            </article>
+          </div>
+          <div class="hero-actions">
+            <a class="btn" href="library.html">Explore the library ↗</a
+            ><a class="btn" href="book.html">The book: In review ↗</a>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="record">
+        <div class="shell">
+          <span class="eyebrow">04 / Service, governance and public life</span>
+          <h2>Work beyond the desk.</h2>
+          <p class="intro">
+            My work connects entrepreneurship, education, technology and public
+            life. Explore the responsibilities, conversations and moments behind
+            that journey.
+          </p>
+          <div class="grid2">
+            <div class="tile">
+              <small>POSITIONS</small>
+              <div>
+                <h3>Leadership & service</h3>
+                <p>
+                  Founder, Hamzury Holding · Chairman, RIDLI · Director of
+                  Research and Policy, Nigeria Youths in Politics (2026/27;
+                  appointment documentation pending review).
+                </p>
+              </div>
+            </div>
+            <div class="tile">
+              <small>POLICY & GOVERNANCE</small>
+              <div>
+                <h3>Bridging grassroots work and policy</h3>
+                <p>
+                  Areas of engagement include digital literacy, privacy,
+                  internet governance, local networks and professional
+                  inclusion.
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="muted" style="margin-top: 20px; font-size: 12px">
+            Engagement index: NITDA · WAIGF · School of Internet Governance ·
+            NADPA-RAPDP · ICEGov · IOM · DL4ALL · DW.
+          </p>
+          <a class="btn alt" href="about.html"
+            >Explore my profile & public life ↗</a
+          >
+        </div>
+      </section>
+      <section class="section museum" id="experiences">
+        <div class="shell">
+          <div class="museum-heading">
+            <div>
+              <span class="eyebrow">THE PERSONAL ARCHIVE</span>
+              <h2>Experiences &amp; moments.</h2>
+            </div>
+            <p class="intro">
+              The rooms, people and ideas that shape a journey. A collection of
+              work, learning and life beyond the desk.
+            </p>
+          </div>
+          <p class="template-note">
+            A growing personal archive · Explore the photographs; detailed event
+            stories are being added.
+          </p>
+          <div class="archive-filters" aria-label="Filter experiences">
+            <button type="button" data-filter="all" aria-pressed="true">
+              All moments</button
+            ><button type="button" data-filter="speaking" aria-pressed="false">
+              Speaking</button
+            ><button
+              type="button"
+              data-filter="governance"
+              aria-pressed="false"
+            >
+              Policy & governance</button
+            ><button type="button" data-filter="community" aria-pressed="false">
+              Teaching & community</button
+            ><button
+              type="button"
+              data-filter="recognition"
+              aria-pressed="false"
+            >
+              Recognition</button
+            ><button type="button" data-filter="life" aria-pressed="false">
+              Life & people</button
+            ><button type="button" data-filter="research" aria-pressed="false">
+              Research & ideas
+            </button>
+          </div>
+          <div class="museum-grid" id="momentGrid">
+            <button
+              type="button"
+              class="moment-card"
+              data-category="speaking"
+              onclick="openMoment(0)"
+              aria-label="Explore Speaking"
+            >
+              <div class="moment-image">
+                <img
+                  src="assets/moments/moment-10.jpg"
+                  alt="Speaking photograph from the personal archive"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                /><span class="template-tag">6 photographs</span
+                ><span class="moment-open">↗</span>
+              </div>
+              <div class="moment-caption">
+                <small>01 / Speaking</small>
+                <h3>Sharing ideas, starting conversations.</h3>
+              </div></button
+            ><button
+              type="button"
+              class="moment-card"
+              data-category="governance"
+              onclick="openMoment(1)"
+              aria-label="Explore Policy & governance"
+            >
+              <div class="moment-image">
+                <img
+                  src="assets/moments/moment-22.jpg"
+                  alt="Policy & governance photograph from the personal archive"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                /><span class="template-tag">14 photographs</span
+                ><span class="moment-open">↗</span>
+              </div>
+              <div class="moment-caption">
+                <small>02 / Policy & governance</small>
+                <h3>In the room, in the conversation.</h3>
+              </div></button
+            ><button
+              type="button"
+              class="moment-card"
+              data-category="community"
+              onclick="openMoment(2)"
+              aria-label="Explore Teaching & community"
+            >
+              <div class="moment-image">
+                <img
+                  src="assets/moments/moment-41.jpg"
+                  alt="Teaching & community photograph from the personal archive"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                /><span class="template-tag">12 photographs</span
+                ><span class="moment-open">↗</span>
+              </div>
+              <div class="moment-caption">
+                <small>03 / Teaching & community</small>
+                <h3>Learning and building together.</h3>
+              </div></button
+            ><button
+              type="button"
+              class="moment-card"
+              data-category="recognition"
+              onclick="openMoment(3)"
+              aria-label="Explore Recognition"
+            >
+              <div class="moment-image">
+                <img
+                  src="assets/moments/moment-03.jpg"
+                  alt="Recognition photograph from the personal archive"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                /><span class="template-tag">6 photographs</span
+                ><span class="moment-open">↗</span>
+              </div>
+              <div class="moment-caption">
+                <small>04 / Recognition</small>
+                <h3>Celebrating progress together.</h3>
+              </div></button
+            ><button
+              type="button"
+              class="moment-card"
+              data-category="life"
+              onclick="openMoment(4)"
+              aria-label="Explore Life & people"
+            >
+              <div class="moment-image">
+                <img
+                  src="assets/moments/moment-16.jpg"
+                  alt="Life & people photograph from the personal archive"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                /><span class="template-tag">4 photographs</span
+                ><span class="moment-open">↗</span>
+              </div>
+              <div class="moment-caption">
+                <small>05 / Life & people</small>
+                <h3>The moments between the work.</h3>
+              </div></button
+            ><button
+              type="button"
+              class="moment-card"
+              data-category="research"
+              onclick="openMoment(5)"
+              aria-label="Explore Research & ideas"
+            >
+              <div class="moment-image">
+                <img
+                  src="assets/moments/moment-00.jpg"
+                  alt="Research & ideas photograph from the personal archive"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                /><span class="template-tag">2 photographs</span
+                ><span class="moment-open">↗</span>
+              </div>
+              <div class="moment-caption">
+                <small>06 / Research & ideas</small>
+                <h3>From a question to useful work.</h3>
+              </div>
+            </button>
+          </div>
+          <p class="archive-count" id="archiveCount" aria-live="polite">
+            44 photographs · 6 collections · Select a collection to explore
+          </p>
+        </div>
+      </section>
+      <section class="section" id="resources">
+        <div class="shell">
+          <div class="feature" style="margin: 45px 0">
+            <a
+              href="downloads/ASSSS_From_Questions_to_Useful_Action_In_Review.pdf"
+              aria-label="Read ASSSS book PDF"
+              ><img
+                src="assets/assss-book-cover.png"
+                alt="ASSSS: From Questions to Useful Action by Haruna Muhammad. First edition, in review."
+                style="
+                  display: block;
+                  width: min(100%, 380px);
+                  height: auto;
+                  margin: auto;
+                  box-shadow: 0 18px 40px #140b0630;
+                "
+                width="490"
+                height="700"
+            /></a>
+            <div>
+              <span class="eyebrow">THE BOOK / COMPLETE FIRST EDITION</span>
+              <h2>From Questions to Useful Action.</h2>
+              <p class="intro">
+                A 40-page practical book on Awareness, Strategy, Structure,
+                Systems and Success. Explore 12 complete chapters, an
+                illustrative worked example, six reusable worksheets and a
+                glossary.
+              </p>
+              <p class="intro">
+                By Haruna Muhammad · November 2026 · In review
+              </p>
+              <a
+                class="btn"
+                href="downloads/ASSSS_From_Questions_to_Useful_Action_In_Review.pdf"
+                download
+                >Download the full book ↓</a
+              >
+              <p><a href="book.html">Explore the book & chapters ↗</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section light" id="life">
+        <div class="shell feature">
+          <div>
+            <span class="eyebrow" style="color: #89653f">A FULLER LIFE</span>
+            <h2>Learning, building and staying human.</h2>
+            <p class="intro">
+              Behind the institutions is a life shaped by setbacks, mentors,
+              family, faith, friendships, sport and a desire to keep
+              experiencing the world. I want to recognise the people who helped
+              me and keep making room for new experiences.
+            </p>
+            <p class="intro">
+              If you once gave me encouragement, time or a chance, I hope we
+              stay connected. Send a note or arrange a conversation.
+            </p>
+            <a
+              class="btn"
+              href="mailto:hm@hamzury.com?subject=Reconnect%20with%20hm"
+              >Reconnect with me ↗</a
+            >
+          </div>
+          <figure class="life-portrait">
+            <button
+              class="photo-open"
+              aria-label="View speaking portrait full size"
+              onclick="showPortrait()"
+            >
+              <img
+                src="assets/portrait.webp"
+                alt="hm hamzury at a speaking engagement"
+                loading="lazy"
+                width="853"
+                height="1058"
+              /><span>View photograph ↗</span>
+            </button>
+            <figcaption>Sharing ideas. Starting conversations.</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="banner" id="connect">
+        <div class="shell">
+          <span class="eyebrow">05 / Let's make something useful</span>
+          <h2>Have a question, an invitation or a problem worth exploring?</h2>
+          <p class="muted">
+            Research collaboration · Speaking · Partnerships · Guided discovery
+          </p>
+          <div class="hero-actions" style="justify-content: center">
+            <button class="btn" onclick="openDiscovery()">
+              Find my next step ↗</button
+            ><a
+              class="btn alt"
+              href="mailto:hm@hamzury.com?subject=Collaboration%20with%20hm%20hamzury"
+              >Invite or collaborate ↗</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section light" id="locations">
+        <div class="shell">
+          <span class="eyebrow" style="color: #89653f">OUR LOCATIONS</span>
+          <h2>Abuja &amp; Jos.</h2>
+          <p class="intro">
+            Abuja: Suite 4, Ajami Plaza, Plot 500B, Tafawa Balewa Way, Area 3,
+            Garki.<br />Jos: Hamzury Innovation Hub.
+          </p>
+          <a class="btn" href="locations.html"
+            >Addresses, directions &amp; sharing ↗</a
+          >
+        </div>
+      </section>
+      <section class="section" id="speaking">
+        <div class="shell">
+          <div class="eyebrow">INVITATIONS & COLLABORATIONS</div>
+          <h2>Useful work begins with a real conversation.</h2>
+          <div class="grid3">
+            <div class="tile">
+              <small>SPEAKING</small>
+              <h3>Teaching, talks & workshops</h3>
+              <p>
+                Entrepreneurship, digital capability, systems thinking and the
+                practice of solving problems.
+              </p>
+              <a
+                class="btn alt"
+                href="mailto:hm@hamzury.com?subject=Speaking%20invitation"
+                >Invite me ↗</a
+              >
+            </div>
+            <div class="tile">
+              <small>RESEARCH</small>
+              <h3>Questions worth investigating</h3>
+              <p>
+                Collaborations on education, business systems, digital inclusion
+                and technology governance.
+              </p>
+              <a
+                class="btn alt"
+                href="mailto:hm@hamzury.com?subject=Research%20collaboration"
+                >Explore research ↗</a
+              >
+            </div>
+            <div class="tile">
+              <small>INSTITUTIONS</small>
+              <h3>Building practical change</h3>
+              <p>
+                Partnership ideas through Hamzury Holding, RIDLI and relevant
+                programmes.
+              </p>
+              <a
+                class="btn alt"
+                href="mailto:hm@hamzury.com?subject=Partnership%20enquiry"
+                >Propose partnership ↗</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <img
+      class="hm-signature"
+      src="assets/brand/signage.webp"
+      alt=""
+      aria-hidden="true"
+    />
+    <footer id="publicFooter">
+      <div class="shell foot">
+        <div>
+          <div class="brand">
+            hm hamzury<small>THINK • BUILD • IMPROVE</small>
+          </div>
+          <p>
+            Ideas, research and practical work for a better understanding of
+            problems—and better responses to them.
+          </p>
+          <p>hm@hamzury.com<br />@hmhamzury</p>
+        </div>
+        <div>
+          <span class="eyebrow">Explore</span><a href="#philosophy">ASSSS</a
+          ><a href="#work">Work</a><a href="#research">Writing</a
+          ><a href="#library">Library</a><a href="#record">Record</a
+          ><a href="#experiences">Experiences &amp; moments</a>
+        </div>
+        <div>
+          <span class="eyebrow">Connect</span
+          ><a href="mailto:hm@hamzury.com">Email</a
+          ><a href="https://www.hamzury.com">Hamzury Holding</a
+          ><a href="locations.html">Locations & directions</a
+          ><a href="#home">Back to top ↑</a>
+        </div>
+      </div>
+      <div class="shell copyright">
+        © 2026 hm hamzury · A living body of work
+      </div>
+    </footer>
+    <div class="modal" id="discovery">
+      <div class="dialog">
+        <button
+          class="close"
+          onclick="
+            document.getElementById('discovery').classList.remove('open')
+          "
+        >
+          ×</button
+        ><span class="eyebrow">Guided discovery</span>
+        <div id="discoveryStep"></div>
+        <p class="muted" style="font-size: 11px">
+          This local demonstration does not store or transmit discovery answers.
+          For a real submission system, consent, privacy notices, secure storage
+          and email delivery must be connected.
+        </p>
+      </div>
+    </div>
+    <div class="modal" id="login">
+      <div class="dialog">
+        <button
+          class="close"
+          onclick="document.getElementById('login').classList.remove('open')"
+        >
+          ×</button
+        ><span class="eyebrow">Private workspace</span>
+        <h2>hm OS — admin preview</h2>
+        <p class="muted">
+          The real production admin will require verified owner authentication,
+          access controls, backups and audit logs. This demo has no login, no
+          server, and no sensitive-data security.
+        </p>
+        <button class="btn" onclick="openDemo()">
+          View local workspace demo ↗
+        </button>
+      </div>
+    </div>
+    <div class="admin" id="admin">
+      <div class="adminbar">
+        <span class="brand">hm OS <small>LOCAL WORKSPACE DEMO</small></span
+        ><button class="pill" onclick="closeAdmin()">
+          Back to public site ↗
+        </button>
+      </div>
+      <div class="adminlayout">
+        <div class="admin-grid">
+          <nav class="admin-side">
+            <button data-tab="dashboard" onclick="render('dashboard')">
+              Overview</button
+            ><button data-tab="tasks" onclick="render('tasks')">
+              My day & tasks</button
+            ><button data-tab="ideas" onclick="render('ideas')">Idea lab</button
+            ><button data-tab="writing" onclick="render('writing')">
+              Writing & research</button
+            ><button data-tab="opportunities" onclick="render('opportunities')">
+              Opportunities</button
+            ><button data-tab="content" onclick="render('content')">
+              Content studio</button
+            ><button data-tab="engagements" onclick="render('engagements')">
+              Positions & engagements</button
+            ><button onclick="exportRecords()">Export JSON ↓</button>
+          </nav>
+          <div id="adminBody"></div>
+        </div>
+      </div>
+    </div>
+    <script src="inline/index.1.js" data-inline></script>
+    <dialog
+      class="photo-lightbox"
+      id="portraitView"
+      aria-label="Speaking portrait"
+    >
+      <button onclick="document.getElementById('portraitView').close()">
+        Close ×</button
+      ><img
+        src="assets/portrait.webp"
+        alt="hm hamzury speaking behind a lectern"
+      />
+    </dialog>
+    <script src="inline/index.2.js" data-inline></script>
+    <dialog
+      id="momentDialog"
+      class="moment-dialog"
+      aria-label="Experience collection"
+    >
+      <button
+        class="moment-close"
+        aria-label="Close collection"
+        onclick="momentDialog.close()"
+      >
+        ×
+      </button>
+      <div class="moment-detail" id="momentDetail"></div>
+    </dialog>
+    <script src="inline/index.3.js" data-inline></script>
+    <script src="inline/index.4.js" data-inline></script>
+  </body>
+</html>

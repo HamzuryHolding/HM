@@ -1,0 +1,1 @@
+Updated from the original v3 ZIP. Includes the recovered speaking portrait. The 68 external archive photo URLs returned HTTP 404 on 6 November 2026 and were not included. The hm OS is still a browser-local demonstration, not a secure production admin. Discovery creates a local brief, not a sent enquiry. Original writing downloads retained.

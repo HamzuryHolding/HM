@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+node_modules/
+data/
+*.sqlite
+*.sqlite-*
+*.db
+*.log
+.DS_Store
+.vscode/
+.wrangler/
+.sites-runtime/
+outputs/
+*backup*.json
+*account-vault*.json
+admin-initial-passphrase.txt

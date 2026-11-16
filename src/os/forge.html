@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Stationery Forge | hm OS</title>
+    <link rel="stylesheet" href="workroom.css" />
+  </head>
+  <body>
+    <header>
+      <strong>hm.OS / Stationery Forge</strong
+      ><a href="./#stationery">← Workspace</a>
+    </header>
+    <main>
+      <span class="eyebrow">Your words. Your signature.</span>
+      <h1>Start with the message.<br />The branding is already here.</h1>
+      <p class="muted">
+        Your original cap-inspired motif, personal colours and signature in
+        reusable layouts.
+      </p>
+      <div class="tools">
+        <button id="createTab">Create</button
+        ><button id="savedTab">Saved drafts</button
+        ><button id="assetsTab">PDFs & brand assets</button>
+      </div>
+      <p id="status" class="status" role="status"></p>
+      <section id="create">
+        <div class="grid">
+          <form class="panel" id="form">
+            <label for="kind">Template</label
+            ><select id="kind">
+              <option value="letter">Personal letter / A4</option>
+              <option value="document">Branded document / A4</option>
+              <option value="flyer">Flyer / 1080 × 1350</option>
+              <option value="carousel">Carousel / 1080 × 1350</option></select
+            ><label for="name">Draft name</label
+            ><input
+              id="name"
+              value="My first letter"
+              required
+              maxlength="160"
+            />
+            <div class="row">
+              <div>
+                <label for="author">Name / signature</label
+                ><input id="author" value="Haruna Muhammad" maxlength="90" />
+              </div>
+              <div>
+                <label for="contact">Contact</label
+                ><input id="contact" value="hm@hamzury.com" maxlength="120" />
+              </div>
+            </div>
+            <div id="letterFields">
+              <div class="row">
+                <div>
+                  <label for="date">Date</label><input id="date" type="date" />
+                </div>
+                <div>
+                  <label for="reference">Reference</label
+                  ><input id="reference" placeholder="HM-COR-2026-001" />
+                </div>
+              </div>
+              <label for="recipient">Recipient / organisation</label
+              ><textarea
+                id="recipient"
+                placeholder="Name and address"
+              ></textarea>
+            </div>
+            <label for="title">Subject / headline</label
+            ><input
+              id="title"
+              value="A conversation worth having"
+              maxlength="120"
+            /><label for="body">Content</label
+            ><textarea id="body" rows="10">
+Dear colleague,
+
+Thank you for your interest in my work.
+
+I would welcome a conversation about how we can turn shared questions into useful action.
+
+Kind regards,</textarea>
+            <p class="muted" id="hint"></p>
+            <label for="theme">Colour treatment for social designs</label
+            ><select id="theme">
+              <option value="dark">Chocolate & cream</option>
+              <option value="light">Cream & chocolate</option>
+            </select>
+            <div class="tools">
+              <button class="primary">Save draft</button
+              ><button id="new" type="button">Start fresh</button>
+            </div>
+          </form>
+          <div>
+            <div class="tools">
+              <button id="print">Print / Save PDF</button
+              ><button id="png" hidden>Download PNG</button
+              ><button id="prev" hidden>← Slide</button><span id="count"></span
+              ><button id="next" hidden>Slide →</button>
+            </div>
+            <iframe id="paper" title="Branded document preview"></iframe
+            ><canvas
+              id="social"
+              width="1080"
+              height="1350"
+              hidden
+              aria-label="Social design preview"
+            ></canvas>
+            <p id="exportHint" class="muted"></p>
+          </div>
+        </div>
+      </section>
+      <section id="saved" hidden>
+        <h2>Your saved stationery.</h2>
+        <div class="tools">
+          <button id="backup">Export draft backup</button
+          ><button id="restore">Import draft backup</button
+          ><input
+            type="file"
+            id="importFile"
+            accept="application/json"
+            hidden
+          />
+        </div>
+        <div class="panel" id="drafts"></div>
+      </section>
+      <section id="assets" hidden>
+        <h2>Your personal brand shelf.</h2>
+        <div class="panel">
+          <img
+            src="../assets/brand/signage.webp"
+            class="motif"
+            alt="Original cap-inspired hm hamzury motif"
+          />
+          <p>
+            Use the original motif as a quiet divider or footer. Keep its
+            proportions and leave the message room to breathe.
+          </p>
+          <a class="btn" href="../assets/brand/signage.webp" download
+            >Download original motif</a
+          >
+        </div>
+        <div id="resources" class="cards"></div>
+      </section>
+      <div class="notice">
+        Drafts stay in this browser. Save and export a backup to keep them.
+        Letters and documents use browser Print / Save PDF; social designs
+        export as PNG, one slide at a time. Nothing is sent or published
+        automatically.
+      </div>
+    </main>
+    <script src="../inline/os-forge.js" data-inline></script>
+  </body>
+</html>

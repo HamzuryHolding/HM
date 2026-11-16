@@ -1,0 +1,336 @@
+const KEY = "hm_applications_v1",
+  $ = (id) => document.getElementById(id),
+  stages = [
+    "Discovered",
+    "Assessing fit",
+    "Preparing",
+    "Ready to submit",
+    "Submitted",
+    "Following up",
+    "Interview / assessment",
+    "Shortlisted",
+    "Awarded / won",
+    "Unsuccessful",
+    "Withdrawn",
+  ],
+  fields = [
+    "title",
+    "organisation",
+    "type",
+    "url",
+    "stage",
+    "deadline",
+    "fit",
+    "checklist",
+    "submitted",
+    "reference",
+    "nextAction",
+    "followUp",
+    "contact",
+    "evidence",
+    "notes",
+  ];
+let records = [],
+  editing = null;
+try {
+  records = JSON.parse(localStorage.getItem(KEY) || "[]");
+  if (!Array.isArray(records)) records = [];
+} catch {}
+const guidance = [
+  "Capture the source, deadline and the opportunity you see.",
+  "Check eligibility, effort required and how this supports your goals.",
+  "Gather documents, draft responses and confirm references.",
+  "Review the complete application and check every required item.",
+  "Keep the submission reference, date and confirmation evidence.",
+  "Record a respectful follow-up date and the response received.",
+  "Prepare examples, questions and any requested assessment materials.",
+  "Record the next decision date and any additional requirements.",
+  "Save the award notice, conditions and the next delivery commitment.",
+  "Record feedback and lessons for the next application.",
+  "Record why you withdrew and any useful lessons.",
+];
+stages.forEach((s) => {
+  for (const k of ["stage", "filter"]) {
+    const o = document.createElement("option");
+    o.value = o.textContent = s;
+    $(k).append(o);
+  }
+});
+function msg(s) {
+  $("status").textContent = s;
+}
+function save() {
+  localStorage.setItem(KEY, JSON.stringify(records));
+}
+function now() {
+  return new Date().toISOString();
+}
+function uid() {
+  return (
+    "hm-app-" +
+    Date.now().toString(36) +
+    "-" +
+    Math.random().toString(36).slice(2)
+  );
+}
+if (!localStorage.getItem("hm_opportunities_migrated_v1")) {
+  try {
+    const old = JSON.parse(localStorage.getItem("hm_os_design_v1") || "{}");
+    for (const x of old.opportunities || []) {
+      if (
+        !records.some(
+          (r) =>
+            r.legacyId === x.id || (r.title === x.title && r.notes === x.note),
+        )
+      )
+        records.push({
+          id: uid(),
+          legacyId: x.id,
+          title: x.title,
+          notes: x.note || "",
+          stage: "Discovered",
+          type: "Other",
+          history: [
+            {
+              at: now(),
+              stage: "Discovered",
+              note: "Imported from OS opportunity desk.",
+            },
+          ],
+        });
+    }
+    save();
+    localStorage.setItem("hm_opportunities_migrated_v1", "1");
+  } catch {
+    msg(
+      "Existing opportunities could not be imported. Your old records remain in the workspace.",
+    );
+  }
+}
+function display() {
+  let q = $("search").value.toLowerCase(),
+    stage = $("filter").value,
+    box = $("list");
+  box.textContent = "";
+  const today = new Date().toLocaleDateString("en-CA"),
+    closed = (r) =>
+      ["Awarded / won", "Unsuccessful", "Withdrawn"].includes(r.stage);
+  const counts = [
+    ["Active", records.filter((r) => !closed(r)).length],
+    [
+      "Follow-ups due",
+      records.filter((r) => !closed(r) && r.followUp && r.followUp <= today)
+        .length,
+    ],
+    [
+      "Awarded / won",
+      records.filter((r) => r.stage === "Awarded / won").length,
+    ],
+  ];
+  $("stats").innerHTML = counts
+    .map(
+      ([n, c]) =>
+        '<div class="card"><span class="eyebrow">' +
+        n +
+        "</span><h2>" +
+        c +
+        "</h2></div>",
+    )
+    .join("");
+  for (const r of records
+    .filter(
+      (r) =>
+        (!stage || r.stage === stage) &&
+        (r.title + " " + r.organisation).toLowerCase().includes(q),
+    )
+    .sort((a, b) =>
+      (a.deadline || "9999").localeCompare(b.deadline || "9999"),
+    )) {
+    const row = document.createElement("div");
+    row.className = "item";
+    const text = document.createElement("div"),
+      strong = document.createElement("strong"),
+      small = document.createElement("small"),
+      button = document.createElement("button");
+    strong.textContent = r.title;
+    small.textContent =
+      r.stage +
+      (r.deadline ? " · Deadline " + r.deadline : "") +
+      (r.nextAction ? " · " + r.nextAction : "");
+    text.append(strong, small);
+    button.textContent = "Open";
+    button.onclick = () => open(r);
+    row.append(text, button);
+    box.append(row);
+  }
+  if (!box.childNodes.length) box.textContent = "No matching opportunities.";
+}
+function open(r) {
+  editing = r.id;
+  $("formTitle").textContent = "Update application.";
+  fields.forEach((k) => ($(k).value = r[k] || ""));
+  if (!stages.includes(r.stage)) $("stage").value = "Discovered";
+  $("changeNote").value = "";
+  $("history").textContent = "";
+  for (const h of r.history || []) {
+    const p = document.createElement("p");
+    p.textContent =
+      new Date(h.at).toLocaleString() +
+      " · " +
+      h.stage +
+      (h.note ? " · " + h.note : "");
+    $("history").append(p);
+  }
+  update();
+}
+function update() {
+  $("guidance").textContent = guidance[stages.indexOf($("stage").value)] || "";
+  const lines = $("checklist")
+    .value.split("\n")
+    .filter((x) => x.trim());
+  $("checks").textContent = lines.length
+    ? lines.filter((x) => /^\[x\]/i.test(x.trim())).length +
+      " of " +
+      lines.length +
+      " materials complete"
+    : "";
+  try {
+    const u = new URL($("url").value);
+    if (!["https:", "http:"].includes(u.protocol) || u.username || u.password)
+      throw Error();
+    $("visit").href = u.href;
+    $("visit").hidden = false;
+  } catch {
+    $("visit").hidden = true;
+    $("visit").removeAttribute("href");
+  }
+}
+["stage", "url", "checklist"].forEach((k) => ($(k).oninput = update));
+$("search").oninput = display;
+$("filter").onchange = display;
+$("new").onclick = () => {
+  editing = null;
+  $("form").reset();
+  $("formTitle").textContent = "New opportunity.";
+  $("history").textContent = "";
+  update();
+};
+$("form").onsubmit = (e) => {
+  e.preventDefault();
+  const x = Object.fromEntries(fields.map((k) => [k, $(k).value.trim()]));
+  if (!x.title) return;
+  const old = records.find((r) => r.id === editing);
+  x.id = editing || uid();
+  x.history = old?.history || [];
+  const note = $("changeNote").value.trim();
+  if (!old || old.stage !== x.stage || note)
+    x.history = [
+      ...x.history,
+      {
+        at: now(),
+        stage: x.stage,
+        note: note || (!old ? "Opportunity created." : "Stage updated."),
+      },
+    ];
+  x.updated = now();
+  const next = [x, ...records.filter((r) => r.id !== x.id)];
+  try {
+    localStorage.setItem(KEY, JSON.stringify(next));
+    records = next;
+    editing = x.id;
+    display();
+    open(x);
+    msg("Application saved.");
+  } catch {
+    msg("Could not save. Export your records before closing this browser.");
+  }
+};
+$("task").onclick = () => {
+  if (!editing) {
+    msg("Save the application before creating its linked task.");
+    return;
+  }
+  try {
+    const r = records.find((x) => x.id === editing),
+      os = JSON.parse(localStorage.getItem("hm_os_design_v1") || "{}");
+    if (!Array.isArray(os.tasks)) os.tasks = [];
+    os.tasks.unshift({
+      id: uid(),
+      title: r.nextAction || "Next step: " + r.title,
+      note: r.title + " · " + r.stage,
+      date: r.followUp || r.deadline || "Flexible",
+      done: false,
+      applicationId: r.id,
+    });
+    localStorage.setItem("hm_os_design_v1", JSON.stringify(os));
+    msg("Linked task added to Tasks & priorities.");
+  } catch {
+    msg("Could not create the task.");
+  }
+};
+function download(text, name) {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([text], { type: "application/json" }));
+  a.download = name;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+$("export").onclick = () =>
+  download(
+    JSON.stringify({ version: 1, applications: records }, null, 2),
+    "hm-applications-backup.json",
+  );
+$("import").onclick = () => $("file").click();
+$("file").onchange = async (e) => {
+  try {
+    const f = e.target.files[0];
+    if (!f) return;
+    if (f.size > 5000000) throw Error();
+    const p = JSON.parse(await f.text());
+    if (!Array.isArray(p.applications)) throw Error();
+    const added = [];
+    for (const r of p.applications) {
+      if (
+        !r ||
+        typeof r.title !== "string" ||
+        typeof r.id !== "string" ||
+        records.some((x) => x.id === r.id) ||
+        added.some((x) => x.id === r.id)
+      )
+        continue;
+      const x = {
+        id: r.id,
+        history: Array.isArray(r.history)
+          ? r.history
+              .filter(
+                (h) =>
+                  h && typeof h.at === "string" && typeof h.stage === "string",
+              )
+              .map((h) => ({
+                at: h.at,
+                stage: h.stage,
+                note: String(h.note || ""),
+              }))
+          : [],
+      };
+      fields.forEach((k) => (x[k] = String(r[k] || "")));
+      if (!stages.includes(x.stage)) x.stage = "Discovered";
+      added.push(x);
+    }
+    const next = [...records, ...added];
+    localStorage.setItem(KEY, JSON.stringify(next));
+    records = next;
+    display();
+    msg(added.length + " records imported. Existing applications kept.");
+  } catch {
+    msg("Choose a valid application tracker backup.");
+  }
+  e.target.value = "";
+};
+display();
+update();
+const selected = new URLSearchParams(location.search).get("id");
+if (selected) {
+  const r = records.find((x) => x.id === selected);
+  if (r) open(r);
+}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>hm OS — personal command centre</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../inline/os-index.css" data-inline />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-name">hm<span>.</span>OS</div>
+          <div class="brand-sub">a life, organised with purpose</div>
+        </div>
+        <div class="section-label">Workspace</div>
+        <nav id="nav"></nav>
+        <div class="sidebar-foot">
+          <div class="profile">
+            <img
+              class="avatar"
+              src="../assets/official-portrait.jpeg"
+              alt="hm hamzury"
+            />
+            <div><b>hm hamzury</b><span>private workspace · demo</span></div>
+          </div>
+          <div class="backup">
+            <button onclick="exportWorkspace()">Export backup ↓</button
+            ><button onclick="document.getElementById('importFile').click()">
+              Import backup ↑</button
+            ><input
+              type="file"
+              id="importFile"
+              accept="application/json"
+              hidden
+              onchange="importWorkspace(this)"
+            />
+          </div>
+          <div class="side-mini">
+            awareness · strategy · structure · systems · success
+          </div>
+        </div>
+      </aside>
+      <div class="main">
+        <header class="topbar">
+          <div style="display: flex; gap: 13px; align-items: center">
+            <button
+              class="iconbutton mobile-toggle"
+              onclick="
+                document.querySelector('#sidebar').classList.toggle('open')
+              "
+            >
+              ☰</button
+            ><span class="crumb"
+              >hm OS <span style="color: #c9a66c">/</span>
+              <b id="crumb">Overview</b></span
+            >
+          </div>
+          <div class="topactions">
+            <a class="site-return" href="../">← Website</a
+            ><span class="pill">✦ Your personal workspace</span
+            ><button
+              class="iconbutton"
+              title="Demo information"
+              onclick="
+                alert(
+                  'Your website and workspace are connected. Ordinary records remain in this browser. Account Vault uses separate encrypted storage and backups. Cloud sync and live publishing from the OS are not connected.',
+                )
+              "
+            >
+              ⓘ</button
+            ><img
+              class="avatar"
+              src="../assets/official-portrait.jpeg"
+              alt="hm hamzury"
+            />
+          </div>
+        </header>
+        <div class="workspace" id="pages"></div>
+      </div>
+    </div>
+    <div class="modalbg" id="modal">
+      <div class="modal">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <h2 id="modalTitle">New record</h2>
+          <button class="iconbutton" onclick="closeModal()">×</button>
+        </div>
+        <p id="modalHint">
+          Keep it simple. You can edit your plan as it develops.
+        </p>
+        <form id="entryForm" class="entry-form"></form>
+      </div>
+    </div>
+    <script src="../inline/os-index.js" data-inline></script>
+  </body>
+</html>

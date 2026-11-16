@@ -1,0 +1,9 @@
+.hm-signature {
+  display: block;
+  width: min(420px, 75%);
+  height: auto;
+  margin: 30px auto 5px;
+  filter: invert(1);
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}

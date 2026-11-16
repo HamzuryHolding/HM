@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Applications & opportunities | hm OS</title>
+    <link rel="stylesheet" href="workroom.css" />
+  </head>
+  <body>
+    <header>
+      <strong>hm.OS / Applications</strong
+      ><a href="./#opportunities">← Workspace</a>
+    </header>
+    <main>
+      <span class="eyebrow">Discovery to decision</span>
+      <h1>Keep every opportunity moving.</h1>
+      <p class="muted">
+        Discover, assess, prepare, submit, follow up and record the result.
+        Every stage change keeps a dated history.
+      </p>
+      <p class="status" id="status" role="status"></p>
+      <div class="tools">
+        <button class="primary" id="new">+ New opportunity</button
+        ><button id="export">Export tracker backup</button
+        ><button id="import">Import tracker backup</button
+        ><input id="file" type="file" accept="application/json" hidden />
+      </div>
+      <div class="cards" id="stats"></div>
+      <div class="grid">
+        <section class="panel">
+          <label for="filter">Stage</label
+          ><select id="filter">
+            <option value="">All stages</option></select
+          ><label for="search">Search</label
+          ><input
+            type="search"
+            id="search"
+            placeholder="Opportunity or organisation"
+          />
+          <div id="list" class="list"></div>
+        </section>
+        <form class="panel" id="form">
+          <h2 id="formTitle">New opportunity.</h2>
+          <label for="title">Opportunity / application name</label
+          ><input id="title" required maxlength="180" />
+          <div class="row">
+            <div>
+              <label for="organisation">Organisation</label
+              ><input id="organisation" />
+            </div>
+            <div>
+              <label for="type">Type</label
+              ><select id="type">
+                <option>Grant</option>
+                <option>Fellowship</option>
+                <option>Speaking</option>
+                <option>Partnership</option>
+                <option>Training</option>
+                <option>Award</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <label for="url">Application or information URL</label
+          ><input id="url" type="url" placeholder="https://" />
+          <div class="row">
+            <div>
+              <label for="stage">Current stage</label
+              ><select id="stage"></select>
+            </div>
+            <div>
+              <label for="deadline">Deadline</label
+              ><input id="deadline" type="date" />
+            </div>
+          </div>
+          <div id="guidance" class="notice"></div>
+          <label for="fit">Discovery / eligibility / why this fits</label
+          ><textarea
+            id="fit"
+            placeholder="Goal, eligibility, evidence needed and your reason for applying"
+          ></textarea
+          ><label for="checklist">Required materials (one per line)</label
+          ><textarea
+            id="checklist"
+            placeholder="Biography
+Proposal
+Budget
+Reference letter
+[x] Profile photo"
+          ></textarea>
+          <p class="muted">
+            Use [x] at the start of a completed item. Your progress appears
+            below.
+          </p>
+          <div id="checks"></div>
+          <div class="row">
+            <div>
+              <label for="submitted">Submission date</label
+              ><input id="submitted" type="date" />
+            </div>
+            <div>
+              <label for="reference">Submission reference</label
+              ><input id="reference" />
+            </div>
+          </div>
+          <label for="nextAction">Next action</label
+          ><input
+            id="nextAction"
+            placeholder="Ask for reference letter; revise proposal; follow up"
+          />
+          <div class="row">
+            <div>
+              <label for="followUp">Next action / follow-up date</label
+              ><input id="followUp" type="date" />
+            </div>
+            <div>
+              <label for="contact">Contact person / email</label
+              ><input id="contact" />
+            </div>
+          </div>
+          <label for="evidence">Evidence and document links</label
+          ><textarea
+            id="evidence"
+            placeholder="Links to drafts, submitted files, confirmation and decision letter"
+          ></textarea
+          ><label for="notes"
+            >Working notes / interview preparation / outcome</label
+          ><textarea id="notes"></textarea
+          ><label for="changeNote">Note for this update</label
+          ><input
+            id="changeNote"
+            placeholder="What changed or what did you learn?"
+          />
+          <div class="tools">
+            <button class="primary">Save application</button
+            ><button type="button" id="task">Create linked OS task</button
+            ><a
+              id="visit"
+              class="btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              hidden
+              >Open application ↗</a
+            >
+          </div>
+          <h3>Stage history</h3>
+          <div id="history" class="timeline"></div>
+        </form>
+      </div>
+      <div class="notice">
+        Records are saved in this browser. Export backups to keep a separate
+        copy. Dates are tracked here; reminders and applications are not sent
+        automatically.
+      </div>
+    </main>
+    <script src="../inline/os-applications.js" data-inline></script>
+  </body>
+</html>
